@@ -8,9 +8,16 @@ class Button extends React.Component {
   }
   toggle() {
     const {
-      active
-    } = this.state
-    this.setState({ active: !active })
+      callback,
+    } = this.props
+    if (callback) {
+      callback()
+    } else {
+      const {
+        active
+      } = this.state
+      this.setState({ active: !active })
+    }
   }
   render() {
     const {
