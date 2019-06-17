@@ -1,13 +1,18 @@
 class App extends React.Component {
-  something() {
-    alert('Something!')
+  constructor(props) {
+    super(props)
+    this.dimeHola = this.dimeHola.bind(this)
+  }
+  dimeHola() {
+    console.log('hola')
   }
   render() {
     return (
       <div>
-        <h1>Hola!</h1>
-        <Button title="Toggle" />
-        <Button title="Salta!" callback={this.something} />
+        <h1>Introducción a ReactJS</h1>
+        <Button
+          title="Dime hola"
+          dimeHolaCallback={this.dimeHola} />
         <Todo />
       </div>
     )
